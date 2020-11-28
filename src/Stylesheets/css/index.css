@@ -6,7 +6,8 @@
 *,
 html,
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 18px; }
 
 html,
 body,
@@ -133,6 +134,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* --------------------------------- Primary -------------------------------- */
+/* ------------------------------- Dark Theme ------------------------------- */
+/* ------------------------------- Light Theme ------------------------------ */
+h1 {
+  font-size: 2.8rem; }
+
+.dark {
+  background-color: #161722; }
+
+.light {
+  background-color: #fafafa; }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -150,13 +163,18 @@ table {
 .app {
   position: relative;
   display: flex;
+  height: 100vh;
   justify-content: center;
-  background: url("../../Assets/images/bg-desktop-light.jpg") center;
-  background-size: cover;
-  height: 33vh;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  font-size: 18px; }
+  z-index: -999; }
+  .app .background {
+    position: fixed;
+    background: url("../../Assets/images/bg-desktop-light.jpg") center;
+    background-size: cover;
+    height: 33vh;
+    width: 100vw;
+    z-index: -998; }
 
 .header {
   display: flex;

@@ -1,11 +1,18 @@
 .app {
 	position: relative;
 	display: flex;
+	height: 100vh;
 	justify-content: center;
-	background: url('../../Assets/images/bg-desktop-light.jpg') center;
-	background-size: cover;
-	height: 33vh;
 	font-family: $default-font;
 	font-weight: 400;
-	font-size: 18px;
+	z-index: -999;
+
+	.background {
+		position: fixed;
+		background: url('../../Assets/images/bg-desktop-light.jpg') center;
+		background-size: cover;
+		height: 33vh;
+		width: 100vw;
+		z-index: -998;
+	}
 }
