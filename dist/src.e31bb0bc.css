@@ -2,6 +2,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*,
+html,
+body {
+  box-sizing: border-box; }
+
 html,
 body,
 div,
@@ -136,6 +142,10 @@ table {
   width: 40vw;
   padding-top: 10vh;
   border: 2px solid red; }
+  .container div {
+    width: 100%;
+    padding: 1rem 0;
+    color: #000; }
 
 .app {
   position: relative;
@@ -143,10 +153,17 @@ table {
   justify-content: center;
   background: url("/bg-desktop-light.9614d8c0.jpg") center;
   background-size: cover;
-  height: 33vh; }
+  height: 33vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px; }
 
 .header {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
+  .header h1 {
+    color: #eee;
+    text-transform: uppercase; }
 
 .todo .form-group input {
   border: none; }
