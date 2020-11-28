@@ -3,7 +3,13 @@ import React from 'react'
 const Header = (props) => {
     const { mode, setMode } = props
     const handleClick = () => {
-        mode == "light" ? setMode("dark") : setMode("light")
+        if (mode == "light") {
+            localStorage.setItem('mode', 'dark')
+            setMode('dark')
+        } else {
+            localStorage.setItem('mode', 'light')
+            setMode('light')
+        }
     }
     return (
         <div className="header">

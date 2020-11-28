@@ -16,8 +16,7 @@ const Form = () => {
     return (
         <div className="form-group">
             <form onSubmit={() => handleSubmit()}>
-                <input type="text" name="task" value={form.task} onChange={e => setForm(e.target.value)} />
-                <input type="submit" />
+                <input type="text" name="task" value={form.task} onChange={e => setForm(e.target.value)} placeholder="Create a new todo..." />
             </form>
         </div>
     )

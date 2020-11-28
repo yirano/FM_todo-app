@@ -29902,9 +29902,8 @@ var Form = function Form() {
     value: form.task,
     onChange: function onChange(e) {
       return setForm(e.target.value);
-    }
-  }), /*#__PURE__*/_react.default.createElement("input", {
-    type: "submit"
+    },
+    placeholder: "Create a new todo..."
   })));
 };
 
@@ -29966,7 +29965,6 @@ var TodoList = function TodoList() {
       _useState2 = _slicedToArray(_useState, 1),
       todo = _useState2[0];
 
-  console.log('TodoList --> ', todo);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "todoList"
   }, todo.map(function (task) {
@@ -29995,7 +29993,13 @@ var Header = function Header(props) {
       setMode = props.setMode;
 
   var handleClick = function handleClick() {
-    mode == "light" ? setMode("dark") : setMode("light");
+    if (mode == "light") {
+      localStorage.setItem('mode', 'dark');
+      setMode('dark');
+    } else {
+      localStorage.setItem('mode', 'light');
+      setMode('light');
+    }
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {

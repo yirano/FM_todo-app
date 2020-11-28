@@ -144,7 +144,10 @@ h1 {
   background-color: #161722; }
 
 .light {
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  color: #484b6a; }
+  .light div.todoCard {
+    background-color: #fafafa; }
 
 .container {
   display: flex;
@@ -154,11 +157,9 @@ h1 {
   height: 90vh;
   width: 40vw;
   padding-top: 10vh;
-  border: 2px solid red;
   z-index: 999999; }
   .container div {
     width: 100%;
-    padding: 1rem 0;
     color: #000; }
 
 .app {
@@ -179,15 +180,26 @@ h1 {
   display: flex;
   justify-content: space-between; }
   .header h1 {
-    color: #eee;
-    text-transform: uppercase; }
+    color: #fafafa;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1rem; }
 
-.todo .form-group input {
-  border: none; }
-
-.todo .todoList .todoCard {
-  border-bottom: 1px solid #ccc;
-  padding: 1rem; }
+.todo {
+  font-size: 1.1rem; }
+  .todo > div,
+  .todo input {
+    border-radius: 0.3rem; }
+  .todo .form-group input {
+    border: none;
+    margin: 1.7rem 0;
+    padding: 1.3rem;
+    width: 100%; }
+  .todo .todoList {
+    overflow: hidden; }
+    .todo .todoList .todoCard {
+      border-bottom: 1px solid #ccc;
+      padding: 1.3rem; }
 
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

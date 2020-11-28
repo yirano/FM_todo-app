@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import TodoCard from './TodoCard'
 const TodoList = () => {
     const [todo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
-    console.log('TodoList --> ', todo)
     return (
         <div className="todoList">
             {todo.map(task => {
