@@ -194,6 +194,11 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1rem; }
+  .header button {
+    background-color: transparent;
+    border: none; }
+    .header button:focus {
+      outline: none; }
 
 .todo {
   font-size: 1.1rem; }

@@ -1,4 +1,6 @@
 import React from 'react'
+import MoonIcon from '../Assets/images/icon-moon.svg'
+import SunIcon from '../Assets/images/icon-sun.svg'
 
 const Header = (props) => {
     const { mode, setMode } = props
@@ -14,7 +16,9 @@ const Header = (props) => {
     return (
         <div className="header">
             <h1>Todo</h1>
-            <button onClick={(e) => handleClick(e)}>Light/Dark</button>
+            <button onClick={(e) => handleClick(e)}>
+                <img src={mode == "dark" ? SunIcon : MoonIcon} />
+            </button>
         </div>
     )
 }

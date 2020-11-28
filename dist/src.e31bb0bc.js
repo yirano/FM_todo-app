@@ -29976,7 +29976,11 @@ var TodoList = function TodoList() {
 
 var _default = TodoList;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./TodoCard":"Components/Todo/TodoCard.jsx"}],"Components/Header.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./TodoCard":"Components/Todo/TodoCard.jsx"}],"Assets/images/icon-moon.svg":[function(require,module,exports) {
+module.exports = "/icon-moon.31cc9523.svg";
+},{}],"Assets/images/icon-sun.svg":[function(require,module,exports) {
+module.exports = "/icon-sun.8d2364c7.svg";
+},{}],"Components/Header.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29985,6 +29989,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _iconMoon = _interopRequireDefault(require("../Assets/images/icon-moon.svg"));
+
+var _iconSun = _interopRequireDefault(require("../Assets/images/icon-sun.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30008,12 +30016,14 @@ var Header = function Header(props) {
     onClick: function onClick(e) {
       return handleClick(e);
     }
-  }, "Light/Dark"));
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: mode == "dark" ? _iconSun.default : _iconMoon.default
+  })));
 };
 
 var _default = Header;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/App.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../Assets/images/icon-moon.svg":"Assets/images/icon-moon.svg","../Assets/images/icon-sun.svg":"Assets/images/icon-sun.svg"}],"Components/App.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
