@@ -5,10 +5,14 @@ import Header from './Header'
 
 const App = () => {
     return (
-        <div>
-            <Header />
-            <Form />
-            <TodoList />
+        <div className="app">
+            <div className="container">
+                <Header />
+                <div className="todo">
+                    <Form />
+                    <TodoList />
+                </div>
+            </div>
         </div>
     )
 }

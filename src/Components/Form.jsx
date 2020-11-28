@@ -14,7 +14,7 @@ const Form = () => {
     }
 
     return (
-        <div>
+        <div className="form-group">
             <form onSubmit={() => handleSubmit()}>
                 <input type="text" name="task" value={form.task} onChange={e => setForm(e.target.value)} />
                 <input type="submit" />

@@ -4,7 +4,7 @@ const TodoList = () => {
     const [todo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
     console.log('TodoList --> ', todo)
     return (
-        <div>
+        <div className="todoList">
             {todo.map(task => {
                 return <TodoCard task={task} />
             })}

@@ -29844,7 +29844,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Components/Form.jsx":[function(require,module,exports) {
+},{"./../../Assets/images/bg-desktop-light.jpg":[["bg-desktop-light.9614d8c0.jpg","Assets/images/bg-desktop-light.jpg"],"Assets/images/bg-desktop-light.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Components/Form.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29890,7 +29890,9 @@ var Form = function Form() {
     localStorage.setItem('todo', JSON.stringify(todo));
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: function onSubmit() {
       return handleSubmit();
     }
@@ -29922,9 +29924,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var TodoCard = function TodoCard(props) {
   var task = props.task;
-  console.log('TodoCard task --> ', task);
-  console.log('TodoCard props --> ', props);
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, task));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "todoCard"
+  }, /*#__PURE__*/_react.default.createElement("p", null, task));
 };
 
 var _default = TodoCard;
@@ -29965,7 +29967,9 @@ var TodoList = function TodoList() {
       todo = _useState2[0];
 
   console.log('TodoList --> ', todo);
-  return /*#__PURE__*/_react.default.createElement("div", null, todo.map(function (task) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "todoList"
+  }, todo.map(function (task) {
     return /*#__PURE__*/_react.default.createElement(_TodoCard.default, {
       task: task
     });
@@ -29987,7 +29991,9 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Header"));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "header"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Todo"), /*#__PURE__*/_react.default.createElement("button", null, "Light/Dark"));
 };
 
 var _default = Header;
@@ -30011,7 +30017,13 @@ var _Header = _interopRequireDefault(require("./Header"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "app"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "todo"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null))));
 };
 
 var _default = App;
