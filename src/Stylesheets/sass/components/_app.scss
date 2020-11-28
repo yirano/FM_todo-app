@@ -5,7 +5,6 @@
 	justify-content: center;
 	font-family: $default-font;
 	font-weight: 400;
-	z-index: -999;
 
 	.background {
 		position: fixed;
@@ -13,6 +12,5 @@
 		background-size: cover;
 		height: 33vh;
 		width: 100vw;
-		z-index: -998;
 	}
 }

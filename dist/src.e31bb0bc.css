@@ -154,7 +154,8 @@ h1 {
   height: 90vh;
   width: 40vw;
   padding-top: 10vh;
-  border: 2px solid red; }
+  border: 2px solid red;
+  z-index: 999999; }
   .container div {
     width: 100%;
     padding: 1rem 0;
@@ -166,15 +167,13 @@ h1 {
   height: 100vh;
   justify-content: center;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
-  z-index: -999; }
+  font-weight: 400; }
   .app .background {
     position: fixed;
     background: url("/bg-desktop-light.9614d8c0.jpg") center;
     background-size: cover;
     height: 33vh;
-    width: 100vw;
-    z-index: -998; }
+    width: 100vw; }
 
 .header {
   display: flex;

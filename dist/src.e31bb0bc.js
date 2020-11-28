@@ -29990,10 +29990,21 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Header = function Header(props) {
+  var mode = props.mode,
+      setMode = props.setMode;
+
+  var handleClick = function handleClick() {
+    mode == "light" ? setMode("dark") : setMode("light");
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "header"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Todo"), /*#__PURE__*/_react.default.createElement("button", null, "Light/Dark"));
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Todo"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick(e) {
+      return handleClick(e);
+    }
+  }, "Light/Dark"));
 };
 
 var _default = Header;
@@ -30033,7 +30044,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var App = function App() {
-  var _useState = (0, _react.useState)("light"),
+  var _useState = (0, _react.useState)(localStorage.getItem("mode") || "light"),
       _useState2 = _slicedToArray(_useState, 2),
       mode = _useState2[0],
       setMode = _useState2[1];
@@ -30041,12 +30052,15 @@ var App = function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "app ".concat(mode)
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "background"
-  }), /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, {
+    setMode: setMode,
+    mode: mode
+  }), /*#__PURE__*/_react.default.createElement("div", {
     className: "todo"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "background"
+  }));
 };
 
 var _default = App;
