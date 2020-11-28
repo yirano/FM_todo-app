@@ -29844,7 +29844,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../../Assets/images/bg-desktop-light.jpg":[["bg-desktop-light.9614d8c0.jpg","Assets/images/bg-desktop-light.jpg"],"Assets/images/bg-desktop-light.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Components/Form.jsx":[function(require,module,exports) {
+},{"./../../Assets/images/bg-desktop-dark.jpg":[["bg-desktop-dark.47f9306e.jpg","Assets/images/bg-desktop-dark.jpg"],"Assets/images/bg-desktop-dark.jpg"],"./../../Assets/images/bg-desktop-light.jpg":[["bg-desktop-light.9614d8c0.jpg","Assets/images/bg-desktop-light.jpg"],"Assets/images/bg-desktop-light.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"Components/Form.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30111,7 +30111,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57523" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59771" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

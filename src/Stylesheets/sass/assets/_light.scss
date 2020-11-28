@@ -1,7 +1,11 @@
 .light {
 	background-color: $very-light-gray;
 	color: $very-dark-grayish-blue;
+	.background {
+		background: url('../../Assets/images/bg-desktop-light.jpg') center;
+	}
 	div.todoCard {
 		background-color: $very-light-gray;
+		border-bottom: 1px solid $light-grayish-blue;
 	}
 }
