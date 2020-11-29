@@ -9,6 +9,9 @@
 		margin: 1.7rem 0;
 		padding: 1.3rem;
 		width: 100%;
+		&:-webkit-autofill {
+			background-color: $very-dark-blue-desat !important;
+		}
 	}
 	.todoList {
 		overflow: hidden;

@@ -22,7 +22,7 @@ const Form = () => {
 
     return (
         <div className="form-group">
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)} autoComplete="off" >
                 <input
                     type="text"
                     name="task"

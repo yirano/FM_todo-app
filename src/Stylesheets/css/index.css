@@ -239,6 +239,8 @@ h1 {
     margin: 1.7rem 0;
     padding: 1.3rem;
     width: 100%; }
+    .todo .form-group input:-webkit-autofill {
+      background-color: #25273c !important; }
   .todo .todoList {
     overflow: hidden; }
     .todo .todoList .todoCard {
