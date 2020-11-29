@@ -4,11 +4,16 @@
 	justify-content: flex-start;
 	align-items: center;
 	height: 90vh;
-	width: 40vw;
+	max-width: 70%;
+	min-width: 35rem;
+	padding: 0 10%;
 	padding-top: 10vh;
 	z-index: 999999;
 	& > div {
 		width: 100%;
 		color: #000;
+	}
+	@media (min-width: 1024px) {
+		width: 60%;
 	}
 }
