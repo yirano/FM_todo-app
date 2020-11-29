@@ -8,6 +8,7 @@ const TodoList = () => {
 
     const onDragEnd = (result) => {
         console.log('OnDragEnd --> ', result)
+        if (!result.destination) return
         const items = todo
         const [reorderedItem] = items.splice(result.source.index, 1)
         items.splice(result.destination.index, 0, reorderedItem)
@@ -38,7 +39,6 @@ const TodoList = () => {
                 )}
             </Droppable>
             <Status todo={todo} setTodo={setTodo} />
-            )
         </DragDropContext>
     )
 }

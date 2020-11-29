@@ -42604,6 +42604,7 @@ var TodoList = function TodoList() {
 
   var onDragEnd = function onDragEnd(result) {
     console.log('OnDragEnd --> ', result);
+    if (!result.destination) return;
     var items = todo;
 
     var _items$splice = items.splice(result.source.index, 1),
@@ -42635,7 +42636,7 @@ var TodoList = function TodoList() {
   }), /*#__PURE__*/_react.default.createElement(_Status.default, {
     todo: todo,
     setTodo: setTodo
-  }), ")");
+  }));
 };
 
 var _default = TodoList;
