@@ -29897,7 +29897,7 @@ var Form = function Form() {
   }, []);
 
   var handleSubmit = function handleSubmit(e) {
-    setForm(JSON.parse(localStorage.getItem('todo')));
+    setForm(JSON.parse(localStorage.getItem('todo')) || []);
     todo.push(form);
     localStorage.setItem('todo', JSON.stringify(todo));
   };
@@ -42816,7 +42816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52975" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54690" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

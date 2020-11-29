@@ -15,7 +15,7 @@ const Form = () => {
     }, [])
 
     const handleSubmit = (e) => {
-        setForm(JSON.parse(localStorage.getItem('todo')))
+        setForm(JSON.parse(localStorage.getItem('todo')) || [])
         todo.push(form)
         localStorage.setItem('todo', JSON.stringify(todo))
     }
