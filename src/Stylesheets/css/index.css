@@ -166,6 +166,8 @@ h1 {
       color: #e4e5f1; }
     .dark .status .filter .active {
       color: #3a7bfd; }
+  .dark footer * {
+    color: #484b6a; }
 
 .light {
   background-color: #fafafa;
@@ -188,6 +190,8 @@ h1 {
       color: #484b6a; }
     .light .status .filter .active {
       color: #3a7bfd; }
+  .light footer * {
+    color: #9394a5; }
 
 .container {
   display: flex;
@@ -301,3 +305,11 @@ h1 {
       padding: 5px; }
   .status .clear {
     cursor: pointer; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  font-size: 0.8rem;
+  font-weight: 400; }

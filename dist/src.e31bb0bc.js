@@ -42698,7 +42698,25 @@ var Header = function Header(props) {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../Assets/images/icon-moon.svg":"Assets/images/icon-moon.svg","../Assets/images/icon-sun.svg":"Assets/images/icon-sun.svg"}],"Components/App.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../Assets/images/icon-moon.svg":"Assets/images/icon-moon.svg","../Assets/images/icon-sun.svg":"Assets/images/icon-sun.svg"}],"Components/Footer.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+  return /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("p", null, "Drag and drop to reorder list"));
+};
+
+var _default = Footer;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"Components/App.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42713,6 +42731,8 @@ var _Form = _interopRequireDefault(require("./Form"));
 var _TodoList = _interopRequireDefault(require("./Todo/TodoList"));
 
 var _Header = _interopRequireDefault(require("./Header"));
+
+var _Footer = _interopRequireDefault(require("./Footer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42747,14 +42767,14 @@ var App = function App() {
     mode: mode
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "todo"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null))), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, null), /*#__PURE__*/_react.default.createElement(_TodoList.default, null)), /*#__PURE__*/_react.default.createElement(_Footer.default, null)), /*#__PURE__*/_react.default.createElement("div", {
     className: "background"
   }));
 };
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Form":"Components/Form.jsx","./Todo/TodoList":"Components/Todo/TodoList.jsx","./Header":"Components/Header.jsx"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Form":"Components/Form.jsx","./Todo/TodoList":"Components/Todo/TodoList.jsx","./Header":"Components/Header.jsx","./Footer":"Components/Footer.jsx"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

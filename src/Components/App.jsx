@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Form from './Form'
 import TodoList from './Todo/TodoList'
 import Header from './Header'
+import Footer from './Footer'
 
 const App = () => {
     const [mode, setMode] = useState(localStorage.getItem("mode") || "light")
@@ -14,6 +15,7 @@ const App = () => {
                     <Form />
                     <TodoList />
                 </div>
+                <Footer />
             </div>
             <div className="background" />
         </div>
