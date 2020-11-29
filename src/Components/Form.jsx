@@ -9,14 +9,14 @@ const initialState = {
 const Form = () => {
     const [form, setForm] = useState(initialState)
     const [todo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         todo.push(form)
         localStorage.setItem('todo', JSON.stringify(todo))
     }
 
     return (
         <div className="form-group">
-            <form onSubmit={() => handleSubmit()}>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <input type="text" name="task" value={form.task} onChange={e => setForm({ ...form, [e.target.name]: e.target.value })} placeholder="Create a new todo..." />
             </form>
         </div>
