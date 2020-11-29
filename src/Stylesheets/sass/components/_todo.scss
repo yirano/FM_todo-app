@@ -1,13 +1,5 @@
 .todo {
 	font-size: 1.1rem;
-	& > .todoList,
-	input {
-		border-radius: 0.3rem;
-	}
-	.todoList {
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
-	}
 
 	.form-group input {
 		border: none;
