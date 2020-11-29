@@ -4,8 +4,8 @@
   "description": "![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
     "scss": "node-sass --watch ./src/Stylesheets/sass/index.scss -o ./src/Stylesheets/css/",
     "deploy": "now"
   },
