@@ -24,5 +24,10 @@
 			color: $dark-grayish-blue;
 			font-weight: 700;
 		}
+		.filter {
+			& > p:hover {
+				color: $very-dark-grayish-blue;
+			}
+		}
 	}
 }

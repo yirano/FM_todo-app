@@ -162,6 +162,8 @@ h1 {
     background-color: #25273c; }
     .dark .status * {
       color: #484b6a; }
+    .dark .status .filter > p:hover {
+      color: #e4e5f1; }
 
 .light {
   background-color: #fafafa;
@@ -180,6 +182,8 @@ h1 {
     .light .status * {
       color: #9394a5;
       font-weight: 700; }
+    .light .status .filter > p:hover {
+      color: #484b6a; }
 
 .container {
   display: flex;
@@ -285,6 +289,8 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-grow: 2; }
+    .status .filter > p {
+      cursor: pointer; }
   .status .clear {
     cursor: pointer; }
 

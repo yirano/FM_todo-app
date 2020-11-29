@@ -28,5 +28,10 @@
 		& * {
 			color: $very-dark-grayish-blue;
 		}
+		.filter {
+			& > p:hover {
+				color: $light-grayish-blue-hover;
+			}
+		}
 	}
 }
