@@ -4,7 +4,7 @@ import TodoCard from './TodoCard'
 import Status from '../Status'
 
 const TodoList = () => {
-    const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')))
+    const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
 
     const onDragEnd = (result) => {
         if (!result.destination) return

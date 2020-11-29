@@ -42608,7 +42608,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var TodoList = function TodoList() {
-  var _useState = (0, _react.useState)(JSON.parse(localStorage.getItem('todo'))),
+  var _useState = (0, _react.useState)(JSON.parse(localStorage.getItem('todo')) || []),
       _useState2 = _slicedToArray(_useState, 2),
       todo = _useState2[0],
       setTodo = _useState2[1];
@@ -42816,7 +42816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50688" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52975" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
