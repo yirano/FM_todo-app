@@ -29892,6 +29892,10 @@ var Form = function Form() {
       _useState4 = _slicedToArray(_useState3, 1),
       todo = _useState4[0];
 
+  (0, _react.useEffect)(function () {
+    document.querySelector('input[type="text"]').focus();
+  }, []);
+
   var handleSubmit = function handleSubmit(e) {
     setForm(JSON.parse(localStorage.getItem('todo')));
     todo.push(form);
@@ -42443,7 +42447,10 @@ var TodoCard = function TodoCard(props) {
     }, completed ? /*#__PURE__*/_react.default.createElement("img", {
       src: _iconCheck.default
     }) : null), /*#__PURE__*/_react.default.createElement("div", {
-      className: completed ? "task completed" : "task incomplete"
+      className: completed ? "task completed" : "task incomplete",
+      onClick: function onClick() {
+        return handleComplete();
+      }
     }, /*#__PURE__*/_react.default.createElement("p", null, task)), /*#__PURE__*/_react.default.createElement("div", {
       className: "delete",
       onClick: function onClick() {
@@ -42788,7 +42795,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54209" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49627" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

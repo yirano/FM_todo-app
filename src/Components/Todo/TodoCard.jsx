@@ -32,7 +32,7 @@ const TodoCard = (props) => {
                             : null
                         }
                     </div>
-                    <div className={completed ? "task completed" : "task incomplete"} >
+                    <div className={completed ? "task completed" : "task incomplete"} onClick={() => handleComplete()}>
                         <p>{task}</p>
                     </div>
                     <div className="delete" onClick={() => handleDelete()}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const initialState = {
     task: "",
@@ -10,6 +10,9 @@ const Form = () => {
     const [form, setForm] = useState(initialState)
     const [todo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
 
+    useEffect(() => {
+        document.querySelector('input[type="text"]').focus()
+    }, [])
 
     const handleSubmit = (e) => {
         setForm(JSON.parse(localStorage.getItem('todo')))
@@ -20,7 +23,13 @@ const Form = () => {
     return (
         <div className="form-group">
             <form onSubmit={(e) => handleSubmit(e)}>
-                <input type="text" name="task" value={form.task} onChange={e => setForm({ ...form, [e.target.name]: e.target.value })} placeholder="Create a new todo..." />
+                <input
+                    type="text"
+                    name="task"
+                    value={form.task}
+                    onChange={e =>
+                        setForm({ ...form, [e.target.name]: e.target.value })} placeholder="Create a new todo..."
+                />
             </form>
         </div>
     )
