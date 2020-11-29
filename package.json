@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "scss": "node-sass --watch ./src/Stylesheets/sass/index.scss -o ./src/Stylesheets/css/"
+    "scss": "node-sass --watch ./src/Stylesheets/sass/index.scss -o ./src/Stylesheets/css/",
+    "deploy": "now"
   },
   "repository": {
     "type": "git",
