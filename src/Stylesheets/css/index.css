@@ -240,9 +240,12 @@ h1 {
 
 .todo {
   font-size: 1.1rem; }
-  .todo > div,
+  .todo > .todoList,
   .todo input {
     border-radius: 0.3rem; }
+  .todo .todoList {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; }
   .todo .form-group input {
     border: none;
     margin: 1.7rem 0;
@@ -296,7 +299,9 @@ h1 {
   font-size: 0.8rem;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem; }
+  padding: 1.1rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem; }
   .status > div {
     flex-grow: 1.9; }
   .status > div:last-child {
