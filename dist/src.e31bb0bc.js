@@ -30014,13 +30014,41 @@ var Status = function Status(props) {
     props.setTodo(JSON.parse(localStorage.getItem('todo')));
   };
 
+  var showAll = function showAll() {
+    props.setTodo(JSON.parse(localStorage.getItem('todo')));
+  };
+
+  var showActive = function showActive() {
+    props.setTodo(JSON.parse(localStorage.getItem('todo')).filter(function (t) {
+      return t.completed == false;
+    }));
+  };
+
+  var showCompleted = function showCompleted() {
+    props.setTodo(JSON.parse(localStorage.getItem('todo')).filter(function (t) {
+      return t.completed == true;
+    }));
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "status"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "length"
   }, /*#__PURE__*/_react.default.createElement("p", null, props.todo.length, " items left")), /*#__PURE__*/_react.default.createElement("div", {
     className: "filter"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "All"), /*#__PURE__*/_react.default.createElement("p", null, "Active"), /*#__PURE__*/_react.default.createElement("p", null, "Completed")), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      return showAll();
+    }
+  }, "All"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      return showActive();
+    }
+  }, "Active"), /*#__PURE__*/_react.default.createElement("p", {
+    onClick: function onClick() {
+      return showCompleted();
+    }
+  }, "Completed")), /*#__PURE__*/_react.default.createElement("div", {
     className: "clear",
     onClick: function onClick() {
       return handleClear();
@@ -30229,7 +30257,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59771" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63775" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
