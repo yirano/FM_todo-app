@@ -8,7 +8,7 @@ const TodoList = () => {
             {todo.map(task => {
                 return <TodoCard task={task} todo={todo} setTodo={setTodo} />
             })}
-            <Status todo={todo} />
+            <Status todo={todo} setTodo={setTodo} />
         </div>
     )
 }

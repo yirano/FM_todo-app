@@ -241,7 +241,8 @@ h1 {
         flex-grow: 2;
         padding: 0 1rem;
         align-self: center;
-        border: none; }
+        border: none;
+        cursor: pointer; }
         .todo .todoList .todoCard .task.completed {
           background: transparent;
           text-decoration: line-through; }
@@ -284,3 +285,5 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-grow: 2; }
+  .status .clear {
+    cursor: pointer; }

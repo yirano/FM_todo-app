@@ -29978,7 +29978,10 @@ var TodoCard = function TodoCard(props) {
   }, completed ? /*#__PURE__*/_react.default.createElement("img", {
     src: _iconCheck.default
   }) : null), /*#__PURE__*/_react.default.createElement("div", {
-    className: completed ? "task completed" : "task incomplete"
+    className: completed ? "task completed" : "task incomplete",
+    onClick: function onClick() {
+      return handleComplete();
+    }
   }, /*#__PURE__*/_react.default.createElement("p", null, task)), /*#__PURE__*/_react.default.createElement("div", {
     className: "delete",
     onClick: function onClick() {
@@ -30004,6 +30007,13 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Status = function Status(props) {
+  var handleClear = function handleClear() {
+    localStorage.setItem('todo', JSON.stringify(props.todo.filter(function (t) {
+      return t.completed == false;
+    })));
+    props.setTodo(JSON.parse(localStorage.getItem('todo')));
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "status"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -30011,7 +30021,10 @@ var Status = function Status(props) {
   }, /*#__PURE__*/_react.default.createElement("p", null, props.todo.length, " items left")), /*#__PURE__*/_react.default.createElement("div", {
     className: "filter"
   }, /*#__PURE__*/_react.default.createElement("p", null, "All"), /*#__PURE__*/_react.default.createElement("p", null, "Active"), /*#__PURE__*/_react.default.createElement("p", null, "Completed")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "clear"
+    className: "clear",
+    onClick: function onClick() {
+      return handleClear();
+    }
   }, /*#__PURE__*/_react.default.createElement("p", null, "Clear Completed")));
 };
 
@@ -30064,7 +30077,8 @@ var TodoList = function TodoList() {
       setTodo: setTodo
     });
   }), /*#__PURE__*/_react.default.createElement(_Status.default, {
-    todo: todo
+    todo: todo,
+    setTodo: setTodo
   }));
 };
 
