@@ -4,10 +4,9 @@ import TodoCard from './TodoCard'
 import Status from '../Status'
 
 const TodoList = () => {
-    const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
+    const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')))
 
     const onDragEnd = (result) => {
-        console.log('OnDragEnd --> ', result)
         if (!result.destination) return
         const items = todo
         const [reorderedItem] = items.splice(result.source.index, 1)

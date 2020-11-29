@@ -7,8 +7,9 @@ const TodoCard = (props) => {
     const { task, completed, id } = props.task
 
     const handleComplete = () => {
-        localStorage.setItem('todo', JSON.stringify(props.todo.map(t => t.id == id ? { ...t, completed: !completed } : t)))
+        localStorage.setItem('todo', JSON.stringify(props.todo.map(t => t.id == id ? { ...t, completed: !completed } : t).sort((a, b) => a.completed - b.completed)))
         props.setTodo(JSON.parse(localStorage.getItem('todo')))
+        window.location.reload()
     }
 
     const handleDelete = () => {
