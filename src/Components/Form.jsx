@@ -9,7 +9,10 @@ const initialState = {
 const Form = () => {
     const [form, setForm] = useState(initialState)
     const [todo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
+
+
     const handleSubmit = (e) => {
+        setForm(JSON.parse(localStorage.getItem('todo')))
         todo.push(form)
         localStorage.setItem('todo', JSON.stringify(todo))
     }
