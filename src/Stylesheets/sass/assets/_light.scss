@@ -28,6 +28,9 @@
 			& > p:hover {
 				color: $very-dark-grayish-blue;
 			}
+			.active {
+				color: $bright-blue;
+			}
 		}
 	}
 }

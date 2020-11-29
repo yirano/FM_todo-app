@@ -2,6 +2,7 @@
 	display: flex;
 	font-size: 0.8rem;
 	justify-content: space-between;
+	align-items: center;
 	padding: 1.1rem;
 	& > div {
 		flex-grow: 1.9;
@@ -16,6 +17,7 @@
 		flex-grow: 2;
 		& > p {
 			cursor: pointer;
+			padding: 5px;
 		}
 	}
 	.clear {

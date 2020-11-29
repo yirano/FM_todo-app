@@ -32,6 +32,9 @@
 			& > p:hover {
 				color: $light-grayish-blue-hover;
 			}
+			.active {
+				color: $bright-blue;
+			}
 		}
 	}
 }

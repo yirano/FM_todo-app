@@ -29,7 +29,7 @@ const Status = (props) => {
                 <p>{props.todo.length} items left</p>
             </div>
             <div className="filter">
-                <p onClick={() => showAll()}>All</p>
+                <p className="active" onClick={() => showAll()}>All</p>
                 <p onClick={() => showActive()}>Active</p>
                 <p onClick={() => showCompleted()}>Completed</p>
             </div>

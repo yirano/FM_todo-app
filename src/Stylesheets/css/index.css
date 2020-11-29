@@ -164,6 +164,8 @@ h1 {
       color: #484b6a; }
     .dark .status .filter > p:hover {
       color: #e4e5f1; }
+    .dark .status .filter .active {
+      color: #3a7bfd; }
 
 .light {
   background-color: #fafafa;
@@ -184,6 +186,8 @@ h1 {
       font-weight: 700; }
     .light .status .filter > p:hover {
       color: #484b6a; }
+    .light .status .filter .active {
+      color: #3a7bfd; }
 
 .container {
   display: flex;
@@ -280,6 +284,7 @@ h1 {
   display: flex;
   font-size: 0.8rem;
   justify-content: space-between;
+  align-items: center;
   padding: 1.1rem; }
   .status > div {
     flex-grow: 1.9; }
@@ -290,6 +295,7 @@ h1 {
     justify-content: space-around;
     flex-grow: 2; }
     .status .filter > p {
-      cursor: pointer; }
+      cursor: pointer;
+      padding: 5px; }
   .status .clear {
     cursor: pointer; }

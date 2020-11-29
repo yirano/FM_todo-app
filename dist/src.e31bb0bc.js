@@ -30037,6 +30037,7 @@ var Status = function Status(props) {
   }, /*#__PURE__*/_react.default.createElement("p", null, props.todo.length, " items left")), /*#__PURE__*/_react.default.createElement("div", {
     className: "filter"
   }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "active",
     onClick: function onClick() {
       return showAll();
     }
