@@ -17,4 +17,12 @@
 			background: $very-light-gray;
 		}
 	}
+
+	.status {
+		background-color: $very-light-gray;
+		& * {
+			color: $dark-grayish-blue;
+			font-weight: 700;
+		}
+	}
 }

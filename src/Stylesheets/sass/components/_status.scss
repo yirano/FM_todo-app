@@ -1,0 +1,17 @@
+.status {
+	display: flex;
+	font-size: 0.8rem;
+	justify-content: space-between;
+	padding: 1.1rem;
+	& > div {
+		flex-grow: 1.9;
+	}
+	& > div:last-child {
+		text-align: right;
+	}
+	.filter {
+		display: flex;
+		justify-content: space-around;
+		flex-grow: 2;
+	}
+}

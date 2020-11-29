@@ -22,4 +22,11 @@
 			background: $very-dark-blue-desat;
 		}
 	}
+
+	.status {
+		background-color: $very-dark-blue-desat;
+		& * {
+			color: $very-dark-grayish-blue;
+		}
+	}
 }

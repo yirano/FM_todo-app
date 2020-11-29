@@ -29961,6 +29961,13 @@ var TodoCard = function TodoCard(props) {
     props.setTodo(JSON.parse(localStorage.getItem('todo')));
   };
 
+  var handleDelete = function handleDelete() {
+    localStorage.setItem('todo', JSON.stringify(props.todo.filter(function (t) {
+      return t.id != id;
+    })));
+    props.setTodo(JSON.parse(localStorage.getItem('todo')));
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "todoCard"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -29973,7 +29980,10 @@ var TodoCard = function TodoCard(props) {
   }) : null), /*#__PURE__*/_react.default.createElement("div", {
     className: completed ? "task completed" : "task incomplete"
   }, /*#__PURE__*/_react.default.createElement("p", null, task)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "delete"
+    className: "delete",
+    onClick: function onClick() {
+      return handleDelete();
+    }
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _iconCross.default
   })));
@@ -29981,7 +29991,33 @@ var TodoCard = function TodoCard(props) {
 
 var _default = TodoCard;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../../Assets/images/icon-check.svg":"Assets/images/icon-check.svg","../../Assets/images/icon-cross.svg":"Assets/images/icon-cross.svg"}],"Components/Todo/TodoList.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../Assets/images/icon-check.svg":"Assets/images/icon-check.svg","../../Assets/images/icon-cross.svg":"Assets/images/icon-cross.svg"}],"Components/Status.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Status = function Status(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "status"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "length"
+  }, /*#__PURE__*/_react.default.createElement("p", null, props.todo.length, " items left")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "filter"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "All"), /*#__PURE__*/_react.default.createElement("p", null, "Active"), /*#__PURE__*/_react.default.createElement("p", null, "Completed")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "clear"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "Clear Completed")));
+};
+
+var _default = Status;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"Components/Todo/TodoList.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29992,6 +30028,8 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _TodoCard = _interopRequireDefault(require("./TodoCard"));
+
+var _Status = _interopRequireDefault(require("../Status"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30025,12 +30063,14 @@ var TodoList = function TodoList() {
       todo: todo,
       setTodo: setTodo
     });
+  }), /*#__PURE__*/_react.default.createElement(_Status.default, {
+    todo: todo
   }));
 };
 
 var _default = TodoList;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./TodoCard":"Components/Todo/TodoCard.jsx"}],"Assets/images/icon-moon.svg":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./TodoCard":"Components/Todo/TodoCard.jsx","../Status":"Components/Status.jsx"}],"Assets/images/icon-moon.svg":[function(require,module,exports) {
 module.exports = "/icon-moon.31cc9523.svg";
 },{}],"Assets/images/icon-sun.svg":[function(require,module,exports) {
 module.exports = "/icon-sun.8d2364c7.svg";

@@ -48,12 +48,16 @@
 					border-radius: 50%;
 					&::after {
 						content: '';
-						position: absolute;
-						width: 1.2rem;
+						width: 1.15rem;
 						height: 1.2rem;
-						// background: transparent;
 						border-radius: 50%;
 					}
+				}
+			}
+
+			.delete {
+				&:hover {
+					cursor: pointer;
 				}
 			}
 		}
