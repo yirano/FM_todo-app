@@ -42406,8 +42406,7 @@ var TodoCard = function TodoCard(props) {
   var _props$task = props.task,
       task = _props$task.task,
       completed = _props$task.completed,
-      id = _props$task.id,
-      index = _props$task.index;
+      id = _props$task.id;
 
   var handleComplete = function handleComplete() {
     localStorage.setItem('todo', JSON.stringify(props.todo.map(function (t) {
@@ -42428,7 +42427,7 @@ var TodoCard = function TodoCard(props) {
 
   return /*#__PURE__*/_react.default.createElement(_reactBeautifulDnd.Draggable, {
     draggableId: "".concat(id),
-    index: index
+    index: props.index
   }, function (provided) {
     return /*#__PURE__*/_react.default.createElement("div", _extends({
       className: "todoCard",
@@ -42603,7 +42602,21 @@ var TodoList = function TodoList() {
       todo = _useState2[0],
       setTodo = _useState2[1];
 
-  return /*#__PURE__*/_react.default.createElement(_reactBeautifulDnd.DragDropContext, null, /*#__PURE__*/_react.default.createElement(_reactBeautifulDnd.Droppable, {
+  var onDragEnd = function onDragEnd(result) {
+    console.log('OnDragEnd --> ', result);
+    var items = todo;
+
+    var _items$splice = items.splice(result.source.index, 1),
+        _items$splice2 = _slicedToArray(_items$splice, 1),
+        reorderedItem = _items$splice2[0];
+
+    items.splice(result.destination.index, 0, reorderedItem);
+    setTodo(items);
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_reactBeautifulDnd.DragDropContext, {
+    onDragEnd: onDragEnd
+  }, /*#__PURE__*/_react.default.createElement(_reactBeautifulDnd.Droppable, {
     droppableId: "todoList"
   }, function (provided) {
     return /*#__PURE__*/_react.default.createElement("div", _extends({
@@ -42617,8 +42630,8 @@ var TodoList = function TodoList() {
         setTodo: setTodo,
         index: index,
         key: task.id
-      }), provided.placeholder);
-    }));
+      }));
+    }), provided.placeholder);
   }), /*#__PURE__*/_react.default.createElement(_Status.default, {
     todo: todo,
     setTodo: setTodo

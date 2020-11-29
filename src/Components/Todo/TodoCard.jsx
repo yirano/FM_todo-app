@@ -4,7 +4,8 @@ import CheckMark from '../../Assets/images/icon-check.svg'
 import Delete from '../../Assets/images/icon-cross.svg'
 
 const TodoCard = (props) => {
-    const { task, completed, id, index } = props.task
+    const { task, completed, id } = props.task
+
     const handleComplete = () => {
         localStorage.setItem('todo', JSON.stringify(props.todo.map(t => t.id == id ? { ...t, completed: !completed } : t)))
         props.setTodo(JSON.parse(localStorage.getItem('todo')))
@@ -17,7 +18,7 @@ const TodoCard = (props) => {
 
     }
     return (
-        <Draggable draggableId={`${id}`} index={index}>
+        <Draggable draggableId={`${id}`} index={props.index}>
             {provided => (
                 <div className="todoCard"
                     ref={provided.innerRef}

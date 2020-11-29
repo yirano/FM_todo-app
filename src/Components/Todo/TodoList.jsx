@@ -5,8 +5,17 @@ import Status from '../Status'
 
 const TodoList = () => {
     const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
+
+    const onDragEnd = (result) => {
+        console.log('OnDragEnd --> ', result)
+        const items = todo
+        const [reorderedItem] = items.splice(result.source.index, 1)
+        items.splice(result.destination.index, 0, reorderedItem)
+
+        setTodo(items)
+    }
     return (
-        <DragDropContext>
+        <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="todoList">
                 {provided => (
                     <div className="todoList"
@@ -21,9 +30,9 @@ const TodoList = () => {
                                     index={index}
                                     key={task.id}
                                 />
-                                {provided.placeholder}
                             </>
                         ))}
+                        { provided.placeholder}
                     </div >
 
                 )}
