@@ -10,5 +10,16 @@
 	input {
 		background-color: $very-dark-blue-desat;
 		border-bottom: 1px solid $very-dark-grayish-blue;
+		.completed {
+			color: $very-dark-grayish-blue;
+			* {
+				color: $very-dark-grayish-blue;
+			}
+		}
+	}
+	.incomplete {
+		&::after {
+			background: $very-dark-blue-desat;
+		}
 	}
 }

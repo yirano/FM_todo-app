@@ -13,7 +13,49 @@
 	.todoList {
 		overflow: hidden;
 		.todoCard {
+			display: flex;
 			padding: 1.3rem;
+			justify-content: space-between;
+			.task {
+				flex-grow: 2;
+				padding: 0 1rem;
+				align-self: center;
+				border: none;
+				&.completed {
+					background: transparent;
+					text-decoration: line-through;
+				}
+			}
+			.toggleComplete {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 1.4rem;
+				height: 1.4rem;
+				border-radius: 50%;
+				overflow: hidden;
+				&:hover {
+					cursor: pointer;
+				}
+				&.completed {
+					background: $check-background;
+				}
+				&.incomplete {
+					display: flex;
+					align-items: center;
+					position: relative;
+					background: $check-background;
+					border-radius: 50%;
+					&::after {
+						content: '';
+						position: absolute;
+						width: 1.2rem;
+						height: 1.2rem;
+						// background: transparent;
+						border-radius: 50%;
+					}
+				}
+			}
 		}
 	}
 }

@@ -29858,6 +29858,12 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29872,7 +29878,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var initialState = {
   task: "",
-  completed: false
+  completed: false,
+  id: new Date().valueOf()
 };
 
 var Form = function Form() {
@@ -29901,7 +29908,7 @@ var Form = function Form() {
     name: "task",
     value: form.task,
     onChange: function onChange(e) {
-      return setForm(e.target.value);
+      return setForm(_objectSpread(_objectSpread({}, form), {}, _defineProperty({}, e.target.name, e.target.value)));
     },
     placeholder: "Create a new todo..."
   })));
@@ -29909,7 +29916,11 @@ var Form = function Form() {
 
 var _default = Form;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/Todo/TodoCard.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js"}],"Assets/images/icon-check.svg":[function(require,module,exports) {
+module.exports = "/icon-check.5bccc29e.svg";
+},{}],"Assets/images/icon-cross.svg":[function(require,module,exports) {
+module.exports = "/icon-cross.eff74010.svg";
+},{}],"Components/Todo/TodoCard.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29917,20 +29928,60 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
+
+var _iconCheck = _interopRequireDefault(require("../../Assets/images/icon-check.svg"));
+
+var _iconCross = _interopRequireDefault(require("../../Assets/images/icon-cross.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var TodoCard = function TodoCard(props) {
-  var task = props.task;
+  var _props$task = props.task,
+      task = _props$task.task,
+      completed = _props$task.completed,
+      id = _props$task.id;
+
+  var handleComplete = function handleComplete() {
+    localStorage.setItem('todo', JSON.stringify(props.todo.map(function (t) {
+      return t.id == id ? _objectSpread(_objectSpread({}, t), {}, {
+        completed: !completed
+      }) : t;
+    })));
+    props.setTodo(JSON.parse(localStorage.getItem('todo')));
+  };
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "todoCard"
-  }, /*#__PURE__*/_react.default.createElement("p", null, task));
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: completed ? "completed toggleComplete" : "incomplete toggleComplete",
+    onClick: function onClick() {
+      return handleComplete();
+    }
+  }, completed ? /*#__PURE__*/_react.default.createElement("img", {
+    src: _iconCheck.default
+  }) : null), /*#__PURE__*/_react.default.createElement("div", {
+    className: completed ? "task completed" : "task incomplete"
+  }, /*#__PURE__*/_react.default.createElement("p", null, task)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "delete"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _iconCross.default
+  })));
 };
 
 var _default = TodoCard;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"Components/Todo/TodoList.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../../Assets/images/icon-check.svg":"Assets/images/icon-check.svg","../../Assets/images/icon-cross.svg":"Assets/images/icon-cross.svg"}],"Components/Todo/TodoList.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29962,14 +30013,17 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var TodoList = function TodoList() {
   var _useState = (0, _react.useState)(JSON.parse(localStorage.getItem('todo')) || []),
-      _useState2 = _slicedToArray(_useState, 1),
-      todo = _useState2[0];
+      _useState2 = _slicedToArray(_useState, 2),
+      todo = _useState2[0],
+      setTodo = _useState2[1];
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "todoList"
   }, todo.map(function (task) {
     return /*#__PURE__*/_react.default.createElement(_TodoCard.default, {
-      task: task
+      task: task,
+      todo: todo,
+      setTodo: setTodo
     });
   }));
 };

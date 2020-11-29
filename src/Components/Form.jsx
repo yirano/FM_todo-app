@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 const initialState = {
     task: "",
-    completed: false
+    completed: false,
+    id: new Date().valueOf()
 }
 
 const Form = () => {
@@ -16,7 +17,7 @@ const Form = () => {
     return (
         <div className="form-group">
             <form onSubmit={() => handleSubmit()}>
-                <input type="text" name="task" value={form.task} onChange={e => setForm(e.target.value)} placeholder="Create a new todo..." />
+                <input type="text" name="task" value={form.task} onChange={e => setForm({ ...form, [e.target.name]: e.target.value })} placeholder="Create a new todo..." />
             </form>
         </div>
     )

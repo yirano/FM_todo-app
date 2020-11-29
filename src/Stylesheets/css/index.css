@@ -150,6 +150,14 @@ h1 {
   .dark input {
     background-color: #25273c;
     border-bottom: 1px solid #484b6a; }
+    .dark div.todoCard .completed,
+    .dark input .completed {
+      color: #484b6a; }
+      .dark div.todoCard .completed *,
+      .dark input .completed * {
+        color: #484b6a; }
+  .dark .incomplete::after {
+    background: #25273c; }
 
 .light {
   background-color: #fafafa;
@@ -159,6 +167,10 @@ h1 {
   .light div.todoCard {
     background-color: #fafafa;
     border-bottom: 1px solid #d2d3db; }
+    .light div.todoCard .completed {
+      color: #d2d3db; }
+  .light .incomplete::after {
+    background: #fafafa; }
 
 .container {
   display: flex;
@@ -169,7 +181,7 @@ h1 {
   width: 40vw;
   padding-top: 10vh;
   z-index: 999999; }
-  .container div {
+  .container > div {
     width: 100%;
     color: #000; }
 
@@ -213,4 +225,38 @@ h1 {
   .todo .todoList {
     overflow: hidden; }
     .todo .todoList .todoCard {
-      padding: 1.3rem; }
+      display: flex;
+      padding: 1.3rem;
+      justify-content: space-between; }
+      .todo .todoList .todoCard .task {
+        flex-grow: 2;
+        padding: 0 1rem;
+        align-self: center;
+        border: none; }
+        .todo .todoList .todoCard .task.completed {
+          background: transparent;
+          text-decoration: line-through; }
+      .todo .todoList .todoCard .toggleComplete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 50%;
+        overflow: hidden; }
+        .todo .todoList .todoCard .toggleComplete:hover {
+          cursor: pointer; }
+        .todo .todoList .todoCard .toggleComplete.completed {
+          background: linear-gradient(to bottom right, #57ddff, #c058f3); }
+        .todo .todoList .todoCard .toggleComplete.incomplete {
+          display: flex;
+          align-items: center;
+          position: relative;
+          background: linear-gradient(to bottom right, #57ddff, #c058f3);
+          border-radius: 50%; }
+          .todo .todoList .todoCard .toggleComplete.incomplete::after {
+            content: '';
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%; }
