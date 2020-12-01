@@ -42504,6 +42504,12 @@ var Status = function Status(props) {
       setTaskFilter = _useState2[1];
 
   var tasks = Array.prototype.slice.call(taskFilter);
+
+  var _useState3 = (0, _react.useState)(),
+      _useState4 = _slicedToArray(_useState3, 2),
+      filterDisplay = _useState4[0],
+      setFilterDisplay = _useState4[1];
+
   (0, _react.useEffect)(function () {
     setTaskFilter(document.querySelectorAll('.taskFilter'));
   }, []);
@@ -42531,16 +42537,20 @@ var Status = function Status(props) {
   };
 
   var showAll = function showAll(e) {
+    setFilterDisplay('active');
     props.setTodo(JSON.parse(localStorage.getItem('todo')));
   };
 
   var showActive = function showActive() {
+    setFilterDisplay('active');
     props.setTodo(JSON.parse(localStorage.getItem('todo')).filter(function (t) {
       return t.completed == false;
     }));
   };
 
-  var showCompleted = function showCompleted() {
+  var showCompleted = function showCompleted(e) {
+    console.log('show Completed --> ', e);
+    setFilterDisplay('completed');
     props.setTodo(JSON.parse(localStorage.getItem('todo')).filter(function (t) {
       return t.completed == true;
     }));
@@ -42550,7 +42560,11 @@ var Status = function Status(props) {
     className: "status"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "length"
-  }, /*#__PURE__*/_react.default.createElement("p", null, props.todo.length, " items left")), /*#__PURE__*/_react.default.createElement("div", {
+  }, filterDisplay != 'completed' ? /*#__PURE__*/_react.default.createElement("p", null, props.todo.filter(function (f) {
+    return !f.completed;
+  }).length, " items left") : /*#__PURE__*/_react.default.createElement("p", null, props.todo.filter(function (f) {
+    return f.completed;
+  }).length, " items completed")), /*#__PURE__*/_react.default.createElement("div", {
     className: "filter"
   }, /*#__PURE__*/_react.default.createElement("p", {
     className: "taskFilter all active",
@@ -42564,8 +42578,8 @@ var Status = function Status(props) {
     }
   }, "Active"), /*#__PURE__*/_react.default.createElement("p", {
     className: "taskFilter completed",
-    onClick: function onClick() {
-      return showCompleted();
+    onClick: function onClick(e) {
+      return showCompleted(e);
     }
   }, "Completed")), /*#__PURE__*/_react.default.createElement("div", {
     className: "clear",
