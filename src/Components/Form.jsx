@@ -30,6 +30,7 @@ const Form = () => {
                     onChange={e =>
                         setForm({ ...form, [e.target.name]: e.target.value })} placeholder="Create a new todo..."
                 />
+                <input type="submit" disabled={!form.task || form.task.trim() == ""} style={{ display: 'none' }} />
             </form>
         </div>
     )

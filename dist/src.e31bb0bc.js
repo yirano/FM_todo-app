@@ -29917,6 +29917,12 @@ var Form = function Form() {
       return setForm(_objectSpread(_objectSpread({}, form), {}, _defineProperty({}, e.target.name, e.target.value)));
     },
     placeholder: "Create a new todo..."
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "submit",
+    disabled: !form.task || form.task.trim() == "",
+    style: {
+      display: 'none'
+    }
   })));
 };
 
@@ -42816,7 +42822,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54690" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51632" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
