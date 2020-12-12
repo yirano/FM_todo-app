@@ -20,10 +20,10 @@ const Status = (props) => {
     }
 
     const handleClear = () => {
-        const filterComplete = props.todo.filter(t => t.completed == false)
+        const filterComplete = JSON.parse(localStorage.getItem('todo')).filter(t => t.completed == false)
         localStorage.setItem('todo', JSON.stringify(filterComplete))
         props.setTodo(JSON.parse(localStorage.getItem('todo')))
-        window.location.reload()
+        // window.location.reload()
     }
 
     const showAll = (e) => {
